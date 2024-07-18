@@ -3,27 +3,23 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseBadRequest, HttpResponseForbidden
 
 
+def index(request):
+    return render(request, 'index.html')
 
-
-def index(request, ident):
-    people = [None, 'Bob', 'Sam', 'Tom']
-    if ident in range(1, len(people)):
-        return HttpResponse(people[ident])
-    else:
-        return HttpResponseNotFound('Пользователь не найден')
+# def index(request, ident):
+#     people = [None, 'Bob', 'Sam', 'Tom']
+#     if ident in range(1, len(people)):
+#         return HttpResponse(people[ident])
+#     else:
+#         return HttpResponseNotFound('Пользователь не найден')
     
-def access(request, age):
-    if age not in range(1, 111):
-        return HttpResponseBadRequest('Не корректные данные')
-    if (age>17):
-        return HttpResponse('Доступ разрещён')
-    else:
-        return HttpResponseForbidden('Доступ заблокирован - слишком юн')
-    
-
-
-
-
+# def access(request, age):
+#     if age not in range(1, 111):
+#         return HttpResponseBadRequest('Не корректные данные')
+#     if (age>17):
+#         return HttpResponse('Доступ разрещён')
+#     else:
+#         return HttpResponseForbidden('Доступ заблокирован - слишком юн')
 
 # def index(request):
 #     return HttpResponse('Нету', status=404)

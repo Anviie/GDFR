@@ -4,9 +4,13 @@ from blog.views import *
 
 
 urlpatterns = [
-    path("index/<int:ident>/", index),
-    path("access/<int:age>/", access),
+    path('', index)
 ]
+
+# urlpatterns = [
+#     path("index/<int:ident>/", index),
+#     path("access/<int:age>/", access),
+# ]
 
 
 # urlpatterns = [
